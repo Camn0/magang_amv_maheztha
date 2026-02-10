@@ -4,7 +4,7 @@ This ROS 2 package provides a lightweight teleoperation node for the BlueBoat US
 
 ## Demo Visualization
 
-[Screencast+from+02-10-2026+10_19_32+PM.webm](https://github.com/user-attachments/assets/cb4970c0-b2a7-48c2-b541-6cdefde75083)
+[Screencast+from+02-10-2026+10_19_32+PM.webm](https://github.com/user-attachments/assets/83372cc0-2fb0-4e69-b526-edd6f7064169)
 
 > **Note:** Click the image above to watch the demonstration of the boat moving in the simulator.
 
