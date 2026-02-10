@@ -45,7 +45,7 @@ pip3 install pynput
 cd ~/ros2_ws/src
 # (Ensure your folder structure matches the tree below)
 cd ~/ros2_ws
-colcon build --packages-select magang_amv
+colcon build --packages-select magang_amv_maheztha_maheztha
 
 ```
 
@@ -64,7 +64,7 @@ source install/setup.bash
 *(Run your simulator launch command here first)*
 2. **Run the Teleop Node:**
 ```bash
-ros2 run magang_amv publisher
+ros2 run magang_amv_maheztha publisher
 
 ```
 
@@ -86,7 +86,7 @@ ros2 run magang_amv publisher
 To adjust the speed of the boat, edit the `speed` variable in `node.py`:
 
 ```python
-# src/magang_amv/magang_amv/node.py
+# src/magang_amv_maheztha/magang_amv_maheztha/node.py
 self.speed = 10.0  # Increase this value to make the boat faster
 
 ```
