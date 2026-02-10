@@ -4,7 +4,8 @@ This ROS 2 package provides a lightweight teleoperation node for the BlueBoat US
 
 ## Demo Visualization
 
-[Screencast+from+02-10-2026+10_19_32+PM.webm](https://github.com/user-attachments/assets/83372cc0-2fb0-4e69-b526-edd6f7064169)
+[Screencast from 02-10-2026 10:19:32 PM.mp4](https://github.com/user-attachments/assets/8ac85308-8334-4440-911d-4d23decedbd8)
+
 
 > **Note:** Click the image above to watch the demonstration of the boat moving in the simulator.
 
@@ -71,6 +72,7 @@ ros2 run magang_amv_maheztha publisher
 
 3. **Control the Boat:**
 **Important:** You must keep the terminal window active (clicked) for keys to register.
+
 | Key | Action | Motor Logic |
 | --- | --- | --- |
 | **W** | Move Forward | Left (+), Right (+) |
