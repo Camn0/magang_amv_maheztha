@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'magang_amv'
+package_name = 'magang_amv_maheztha'
 
 setup(
     name=package_name,
@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'publisher = magang_amv_maheztha.node:main',
         ],
     },
 )
