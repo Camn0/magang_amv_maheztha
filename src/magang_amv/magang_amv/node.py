@@ -4,6 +4,9 @@ from rclpy.node import Node
 # Import the specific message type
 from std_msgs.msg import Float64MultiArray
 
+# IMPORT KEYBOARD LISTENER
+from pynput import keyboard
+
 class MultiArrayPublisher(Node):
 
     def __init__(self):
@@ -19,8 +22,40 @@ class MultiArrayPublisher(Node):
         timer_period = 0.1 
         self.timer = self.create_timer(timer_period, self.timer_callback)
         
-        # Optional: Counter or internal state variables
-        self.i = 0
+        # INTERNAL VARIABLES FOR SPEED
+        self.left_val = 0.0
+        self.right_val = 0.0
+        self.speed = 10.0  # The value you found works (10)
+
+        # START KEYBOARD LISTENER (Non-blocking)
+        self.listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release)
+        self.listener.start()
+
+    def on_press(self, key):
+        try:
+            # W = Forward (Both 10) -> Output [-10, 10]
+            if key.char == 'w':
+                self.left_val = self.speed
+                self.right_val = self.speed
+            # S = Backward (Both -10) -> Output [10, -10]
+            elif key.char == 's':
+                self.left_val = -self.speed
+                self.right_val = -self.speed
+            # A = Rotate Left (Left -10, Right 10) -> Output [-10, -10]
+            elif key.char == 'a':
+                self.left_val = -self.speed
+                self.right_val = self.speed
+            # D = Rotate Right (Left 10, Right -10) -> Output [10, 10]
+            elif key.char == 'd':
+                self.left_val = self.speed
+                self.right_val = -self.speed
+        except AttributeError:
+            pass
+
+    def on_release(self, key):
+        # Stop when key is released
+        self.left_val = 0.0
+        self.right_val = 0.0
 
     def timer_callback(self):
         # This function runs every 'timer_period' seconds
@@ -29,15 +64,19 @@ class MultiArrayPublisher(Node):
         msg = Float64MultiArray()
         
         # B. LOGIC GOES HERE
-        # DATA: Two thrusters, (1500 is stopped)
-        # Change these values to move: e.g., [1600.0, 1600.0] for forward
-        msg.data = [1800.0, 1800.0]
+        left_thruster = self.left_val
+        right_thruster = self.right_val
+        
+        # Your specific mapping: [-right, left]
+        # Forward (W): [-10, 10]  <-- Works if Right=10, Left=10
+        # Spin CW (D): [10, 10]   <-- Works if Right=-10, Left=10
+        msg.data = [-right_thruster, left_thruster]
         
         # C. Publish the message
         self.publisher_.publish(msg)
         
         # D. Log to console
-        self.get_logger().info('Publishing array data...')
+        self.get_logger().info(f'Publishing: {msg.data}')
 
 def main(args=None):
     # Initialize the ROS communication
