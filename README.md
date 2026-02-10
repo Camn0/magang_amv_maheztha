@@ -46,7 +46,7 @@ pip3 install pynput
 cd ~/ros2_ws/src
 # (Ensure your folder structure matches the tree below)
 cd ~/ros2_ws
-colcon build --packages-select magang_amv_maheztha_maheztha
+colcon build --packages-select magang_amv_maheztha
 
 ```
 
