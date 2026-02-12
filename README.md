@@ -82,7 +82,6 @@ ros2 run magang_amv_maheztha publisher
 | *(Release)* | Stop | Neutral (0, 0) |
 
 
-
 ## Configuration
 
 To adjust the speed of the boat, edit the `speed` variable in `node.py`:
