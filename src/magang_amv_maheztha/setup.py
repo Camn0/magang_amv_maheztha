@@ -19,8 +19,9 @@ setup(
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': [
-            'publisher = magang_amv_maheztha.node:main',
-        ],
-    },
+    'console_scripts': [
+        'publisher = magang_amv_maheztha.node:main',         # Your keyboard node
+        'vision_pilot = magang_amv_maheztha.vision_node:main', # NEW VISION NODE
+    ],
+},
 )
