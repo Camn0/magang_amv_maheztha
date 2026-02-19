@@ -5,6 +5,7 @@ This ROS 2 package upgrades the BlueBoat USV from manual teleoperation to an aut
 ## Demo Visualization & Example Detection
 
 **Autonomous Navigation Demo:**
+
 [Screencast from 02-20-2026 03:05:12 AM.webm](https://github.com/user-attachments/assets/9e9f2b0e-ea09-4b90-90bc-93eb35040426)
 
 > **Note:** Watch the demonstration of the boat automatically steering through the buoy gap in the Stonefish simulator.
