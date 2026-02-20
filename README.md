@@ -109,7 +109,3 @@ self.forward_speed = 10.0   # Adjust the base cruising speed
 self.turn_speed = 3.0       # Adjust how aggressively the boat steers left/right
 
 ```
-
----
-
-Would you like me to walk you through generating the `.gif` or `.mp4` file of your simulation screen so you can insert it into the placeholder links?
